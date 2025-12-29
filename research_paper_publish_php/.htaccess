@@ -1,0 +1,25 @@
+# .htaccess for Research Paper Submission
+
+# Enable custom error pages
+ErrorDocument 404 /research_paper_submission/404.php
+
+# Enable RewriteEngine for clean URLs (optional, not required for basic run)
+# RewriteEngine On
+# RewriteBase /research_paper_submission/
+
+# Protect sensitive directories
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Allow PDF viewing from uploads
+<IfModule mod_headers.c>
+    <FilesMatch "\.(pdf)$">
+        Header set X-Content-Type-Options "nosniff"
+    </FilesMatch>
+</IfModule>
+
+# Increase upload size if needed (adjust in php.ini as well)
+# php_value upload_max_filesize 20M
+# php_value post_max_size 25M

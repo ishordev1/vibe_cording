@@ -1,0 +1,6 @@
+# Place signature image here (e.g., signature.png)
+# Recommended size: 150x75 px
+
+# This placeholder can be replaced with an actual signature image.
+# For certificate generation, reference in admin/generate_certificate.php:
+# $pdf->Image('assets/signature.png', x, y, width, height);

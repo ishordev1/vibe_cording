@@ -1,0 +1,6 @@
+# Place journal logo here (e.g., logo.png)
+# Recommended size: 200x100 px
+
+# This placeholder can be replaced with your actual journal logo.
+# For certificate generation, you can reference this in admin/generate_certificate.php:
+# $pdf->Image('assets/logo.png', x, y, width, height);

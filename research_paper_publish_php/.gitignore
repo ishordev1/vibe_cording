@@ -1,0 +1,28 @@
+# Gitignore for Research Paper Submission
+
+# Uploads
+uploads/papers/*
+uploads/copyrights/*
+uploads/published/*
+uploads/certificates/*
+uploads/qrcodes/*
+
+# Keep directory structure
+!uploads/papers/.gitkeep
+!uploads/copyrights/.gitkeep
+!uploads/published/.gitkeep
+!uploads/certificates/.gitkeep
+!uploads/qrcodes/.gitkeep
+
+# Config (if you have local overrides)
+includes/config.local.php
+
+# Composer
+vendor/*
+!vendor/README.md
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

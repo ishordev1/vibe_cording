@@ -1,0 +1,267 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset='UTF-8'>
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'>
+            <style>
+                * { margin: 0; padding: 0; }
+                body { font-family: 'Georgia', serif; }
+                .certificate {
+                    width: 11in;
+                    height: 8.5in;
+                    border: 15px solid transparent;
+                    background: linear-gradient(white, white) padding-box,
+                                linear-gradient(135deg, #4a6fa5 0%, #2c3e50 50%, #4a6fa5 100%) border-box;
+                    padding: 40px;
+                    box-sizing: border-box;
+                    position: relative;
+                    text-align: center;
+                    page-break-inside: avoid;
+                }
+                .certificate::before {
+                    content: '';
+                    position: absolute;
+                    top: 25px;
+                    left: 25px;
+                    right: 25px;
+                    bottom: 25px;
+                    border: 2px dashed #4a6fa5;
+                    pointer-events: none;
+                }
+                .content {
+                    position: relative;
+                    z-index: 1;
+                }
+                .header {
+                    margin-bottom: 15px;
+                }
+                .tagline {
+                    font-size: 12px;
+                    color: #4a6fa5;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    margin-bottom: 15px;
+                }
+                .title {
+                    font-size: 52px;
+                    font-weight: bold;
+                    color: #4a6fa5;
+                    margin: 20px 0;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    word-spacing: 0.2em;
+                }
+                .description {
+                    font-size: 13px;
+                    color: #2c3e50;
+                    margin: 15px 0;
+                    line-height: 1.6;
+                }
+                .student-name {
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #4a6fa5;
+                    margin: 25px 0 10px 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                .student-detail-line {
+                    border-bottom: 2px dotted #4a6fa5;
+                    margin: 0 0 20px 0;
+                    padding-bottom: 5px;
+                    height: 5px;
+                }
+                .body {
+                    margin: 15px 0;
+                    line-height: 1.8;
+                }
+                .body p {
+                    font-size: 13px;
+                    margin-bottom: 8px;
+                    color: #2c3e50;
+                }
+                .internship-name {
+                    font-size: 16px;
+                    color: #4a6fa5;
+                    font-weight: bold;
+                    margin: 10px 0;
+                }
+                .skills-section {
+                    font-size: 12px;
+                    color: #2c3e50;
+                    margin: 15px 0;
+                    line-height: 1.6;
+                }
+                .footer {
+                    margin-top: 25px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    gap: 20px;
+                }
+                .signature-block {
+                    flex: 1;
+                    text-align: center;
+                }
+                .signature-line {
+                    border-top: 1px solid #2c3e50;
+                    margin: 30px 0 5px 0;
+                    height: 1px;
+                }
+                .signature-name {
+                    font-size: 12px;
+                    color: #2c3e50;
+                    font-weight: bold;
+                    margin-top: 5px;
+                }
+                .signature-title {
+                    font-size: 10px;
+                    color: #666;
+                    margin-top: 2px;
+                }
+                .qr-section {
+                    flex: 1;
+                    text-align: center;
+                }
+                .qr-section img {
+                    width: 80px;
+                    height: 80px;
+                    border: 1px solid #4a6fa5;
+                    padding: 3px;
+                }
+                .reference-number {
+                    flex: 1;
+                    text-align: center;
+                    font-size: 11px;
+                }
+                .reference-number p {
+                    margin: 0;
+                    color: #2c3e50;
+                }
+                .reference-label {
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+                .reference-value {
+                    margin-top: 5px;
+                }
+                @media print {
+                    body { margin: 0; padding: 0; }
+                    .controls { display: none; }
+                    .certificate { page-break-inside: avoid; }
+                }
+                @media print {
+                    body { margin: 0; padding: 0; }
+                    .controls { display: none; }
+                    .certificate { page-break-inside: avoid; }
+                }
+                .controls {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 1000;
+                    display: flex;
+                    gap: 10px;
+                }
+                .controls button {
+                    padding: 10px 20px;
+                    background-color: #8e44ad;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-weight: bold;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                    transition: background-color 0.3s;
+                }
+                .controls button:hover {
+                    background-color: #7d3c98;
+                }
+                .controls button.print-btn {
+                    background-color: #3498db;
+                }
+                .controls button.print-btn:hover {
+                    background-color: #2980b9;
+                }
+                .controls button.download-btn {
+                    background-color: #27ae60;
+                }
+                .controls button.download-btn:hover {
+                    background-color: #229954;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='controls'>
+                <button class='print-btn' onclick='window.print()'>
+                    <i class='fas fa-print'></i> Print
+                </button>
+                <button class='download-btn' onclick='downloadCertificate()'>
+                    <i class='fas fa-download'></i> Download PDF
+                </button>
+            </div>
+            
+            <div class='certificate'>
+                <div class='content'>
+                    <div class='header'>
+                        <div class='tagline'>🚀 Digital Tarai</div>
+                    </div>
+                    
+                    <div class='title'>Certificate of Internship</div>
+                    
+                    <p class='description'>This is to certify that</p>
+                    
+                    <div class='student-name'>Shiv Diyal Chaudhary</div>
+                    <div class='student-detail-line'></div>
+                    
+                    <p class='body'>
+                        <span>student of</span> 
+                        <strong>Backend Development Internship</strong>
+                        <span> has successfully completed an internship in the field of</span> 
+                        <strong>Backend Development Internship</strong>
+                        <span>. During the period of her/his internship program with us, she/he has been exposed to </span>
+                        <strong>[Enter skills]</strong>.
+                    </p>
+                    
+                    <div class='footer'>
+                        <div class='signature-block'>
+                            <div class='signature-line'></div>
+                            <p class='signature-name'>Ishordev</p>
+                            <p class='signature-title'>Authorized organ</p>
+                        </div>
+                        
+                        <div class='qr-section'>
+                            <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIAQMAAACXljzdAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABnklEQVRYhc2YMboDIQiEseIY3lR3b+oxrPQxg+6zSS1+KYy/BUFnwIj8HHXaaKKtdinqcyyNAKRYfNqKNpH8dtvoc1sPQHSONc2PttSxETwMsSlS2w2ur3HICrZnwjBE1to4Mnrcg5vEVVL0/Jz6uUl8pDkfXsYXuTzHTWJRD8UdNPkmhl8xz08AYvG+8DzcvoRUTgvcnGYEIMXTqVgeSKrAnoV38TZJUC23KEjFHHKJQHC2yCWc7/2Xr4QgszHSFbg7X4LZBCC8hpbF6eFTK5X6CUHseIV1zPhsuxEIQagSE66lcyUV1SMAEQrFzZhC+U47AEEXQLc7FExXvk+8/iNqtYKW4codZy4BiKBWeDc3/WfUfdrXiVtLpedtuXzucpkU1rGJupG9jbJjf5DdEIRRU7K8kpVvHYlA2AUMdprveiB6O3Cf+HAnLnTlo0m5TCqiRJXY7pKHrmp2nRTaSNpNE+WL7SEIX4eFcD+pWTfCkEr5IrtsCoY2CUO8zK6M0vmeCESWH4+tksoGWQKQTyWJD0T/6+uRUz/XyM/xB4wodszFleyiAAAAAElFTkSuQmCC' alt='Certificate Verification QR Code'>
+                        </div>
+                        
+                        <div class='reference-number'>
+                            <p class='reference-label'>Reference Number</p>
+                            <p class='reference-value'>00000025</p>
+                            <p style='margin-top: 20px; font-size: 10px;'>Issuance Date</p>
+                            <p style='font-size: 10px; margin-top: 5px;'>28 Dec, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js'></script>
+        <script>
+        function downloadCertificate() {
+            const element = document.querySelector('.certificate');
+            const filename = 'Digital_Tarai_Certificate_' + new Date().getTime() + '.pdf';
+            
+            const opt = {
+                margin: 0.5,
+                filename: filename,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'landscape', unit: 'in', format: [11, 8.5] }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+        </script>
+        </html>
+        

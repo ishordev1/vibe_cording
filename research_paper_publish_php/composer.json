@@ -1,0 +1,15 @@
+{
+  "name": "research-paper-submission",
+  "description": "PHP-based research paper submission and management system",
+  "type": "project",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {},
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Developer"
+    }
+  ]
+}

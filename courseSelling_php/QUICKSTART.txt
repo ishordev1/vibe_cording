@@ -1,0 +1,164 @@
+==================================================
+DIGITAL TARAI - QUICK START GUIDE
+==================================================
+
+STEP 1: RUN SETUP
+================
+1. Open your browser
+2. Go to: http://localhost/ai/DigitalTarai/setup.php
+3. Wait for database tables to be created
+4. You'll see confirmation messages
+
+STEP 2: VERIFY INSTALLATION
+============================
+1. Navigate to: http://localhost/ai/DigitalTarai/
+2. You should see the homepage
+3. All pages should load without errors
+
+STEP 3: LOGIN CREDENTIALS
+==========================
+ADMIN LOGIN:
+Email: admin@digitaltarai.com
+Password: admin123
+URL: http://localhost/ai/DigitalTarai/auth.php?action=login
+
+STUDENT LOGIN:
+Email: ram@example.com
+Password: student123
+URL: http://localhost/ai/DigitalTarai/auth.php?action=login
+
+STEP 4: EXPLORE THE WEBSITE
+============================
+PUBLIC PAGES:
+- Home: /index.php
+- Services: /pages/services.php
+- How It Works: /pages/how-it-works.php
+- Blog: /pages/blog.php
+- Careers: /pages/careers.php
+- Contact: /pages/contact.php
+
+STUDENT PAGES (Login Required):
+- Dashboard: /student/dashboard.php
+- Internship Detail: /pages/internship-detail.php?slug=frontend-development-internship
+- Apply: /pages/internship-apply.php?internship_id=1
+- Payment Upload: /pages/internship-payment.php?application_id=1
+
+ADMIN PAGES (Admin Login Required):
+- Admin Dashboard: /admin/dashboard.php
+- View Applications: /admin/application-detail.php?id=1
+- Verify Payments: /admin/verify-payment.php?id=1
+
+STEP 5: TEST THE INTERNSHIP FLOW
+=================================
+1. Login as student (ram@example.com / student123)
+2. Go to /pages/careers.php
+3. Click "View Details" on any internship
+4. Click "Apply Now"
+5. Confirm application
+6. Upload a payment screenshot (any image)
+7. Logout and login as admin
+8. Go to /admin/dashboard.php
+9. Click on "Pending Payments" tab
+10. Click "Verify" on the payment
+11. Verify the payment
+
+STEP 6: CUSTOMIZE
+=================
+CHANGE COMPANY INFO:
+Edit /config/config.php
+- SITE_NAME
+- COMPANY_EMAIL
+- COMPANY_PHONE
+- COMPANY_LOCATION
+
+CHANGE COLORS:
+Edit /app/views/header.php (CSS section)
+Look for color classes and update as needed
+
+ADD INTERNSHIPS:
+Use direct MySQL queries or create admin interface
+
+==================================================
+KEY FEATURES CHECKLIST
+==================================================
+✓ Modern responsive design
+✓ Student registration & login
+✓ Admin login (separate)
+✓ Internship listing and details
+✓ Application system
+✓ Payment screenshot upload
+✓ Admin payment verification
+✓ Blog with categories
+✓ Company services page
+✓ How it works page
+✓ Contact form (template)
+✓ Student dashboard
+✓ Admin dashboard
+✓ Dummy data included
+✓ Database setup script
+
+==================================================
+DATABASE TABLES
+==================================================
+1. users - Student and admin accounts
+2. internships - Internship programs
+3. applications - Student applications
+4. payments - Payment records
+5. modules - Course modules
+6. student_module_progress - Module completion tracking
+7. blogs - Blog posts
+8. activity_logs - Activity tracking
+
+==================================================
+FILE STRUCTURE
+==================================================
+/config/ - Configuration files
+/app/ - Application code (MVC)
+/public/ - Static files
+/student/ - Student dashboard pages
+/admin/ - Admin dashboard pages
+/pages/ - Public pages
+/lib/ - Helper functions
+
+==================================================
+TROUBLESHOOTING
+==================================================
+1. Database Connection Error:
+   - Check MySQL is running
+   - Verify credentials in /config/database.php
+   - Make sure database 'digital_tarai' exists
+
+2. Cannot Access Setup Page:
+   - Ensure PHP is running
+   - Check XAMPP is started
+   - Verify file exists in correct location
+
+3. Login Not Working:
+   - Clear browser cookies/cache
+   - Check database has users table
+   - Verify credentials are correct
+
+4. File Upload Error:
+   - Check /public/uploads/ folder exists
+   - Verify folder has write permissions
+   - Check max file size limit
+
+==================================================
+NEXT STEPS
+==================================================
+1. Add your actual company information
+2. Replace logo and branding
+3. Add real blog content
+4. Integrate payment gateway (Khalti, Esewa)
+5. Setup email notifications
+6. Configure SSL certificate
+7. Deploy to production server
+8. Set up backup system
+
+==================================================
+SUPPORT
+==================================================
+Email: info@digitaltarai.com
+Website: www.digitaltarai.com
+
+==================================================
